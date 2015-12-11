@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet"
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet"
         type="text/css"
         href="../static/style.css">
     </head>
     <body>
-        <center>
+        <div class="container">
             <img src="../static/Relish.png">
+            <br>
+ 
             <h1>Star Recipe</h1>
-        </center>
+            <h2>Green Tomato Relish</h2>
+            <img src="../static/relish.jpg">
+            
+            <div class="resp">
+                <input type="text" id="data"/><button id="b">Go</button>
+                <span id="recipe"></span>
+            </div>
+            <br>
+            <table class="foods"
+            cellpadding="50"
+            align="center">
+                <tr>
+                    <td class="app">
+                        <h1>Appetizer</h1>
+                    </td>
+                    <td class="main">
+                        <h1>Main Dish</h1>
+                    </td>
+                    <td class="dessert">
+                        <h1>Dessert</h1>
+                        <div class="fadein">
+                            <img src="../static/xmascookies.jpg"
+                            height="300px"
+                            id="1" align="middle">
+                            <!-- <img src="../static/relish.jpg"> -->
+                            <img src="../static/tiramisu.jpg"
+                            id="2" align="middle">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!-- <script>
+              $(function(){
+            	$('.fadein img:gt(0)').hide();
+            	setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 3000);
+            });
+            </script> -->
+        
+        <script src="../static/relish.js"></script>
+        </div>
     </body>
 </html>
