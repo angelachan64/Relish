@@ -36,37 +36,52 @@ setTimeout("changeImage()", 3000);
 		} else
 	}
 };*/
-var fade = function(str){
-	$(str).fadeToggle();
+var count;
+var fade = function(){
+	count = 1;
+	while(count<3){
+	  var myVar = setTimeout(function(){
+	    $("#"+count.toString()).fadeToggle();
+	  }, 5000);
+	} count = 2;
+	while(count<3){
+	  var myVar = setTimeout(function(){
+	    $("#"+count.toString()).fadeToggle();
+	  }, 10000);
+	}
 }
 
 $(document).ready(function(){
 	var count = 1;
 	while(count<3){
-		if(count%2==0){
-			var myVar = setInterval(setTimeout(fade, 5000, "#"+count.toString()));
-		} else{
-			var myVar = setInterval(fade, 5000, "#"+count.toString());
-		} count++;
+		var myVar = setInterval(fade, 5000);
+		count++;
 	}
 });
 
 $("#b").click(function(){
   var data = $("#data").val().toLowerCase();
-  console.log(data)
+  console.log(data);
 });
 
 //RECIPES
+
 /*
+$(document).ready(function() {
+  $.ajax({
+    type: "GET",
+    url: "recipes.txt",
+    dataType: "text",
+    
+  })
+});
+
 $(document).ready(function(){
   $("#b").click(function(){
-    try{
-    var recipes = $.csv.toArray("../recipes.csv");
-    var data = $("#data").val().toLowerCase();
-    console.log(data);
-    }catch(e) {
-      
-    }
+    var input = $("#data");
+    var d = input.val();
+    input.val("");
+
     $.getJSON("../home.html",{data:data},function(r) {
       $.each(recipes, function(index, i) {
         if ($(i.get(0)).toLowerCase().end().indexOf(data)>-1) {
@@ -77,5 +92,4 @@ $(document).ready(function(){
       });
     });
   });
-});
-*/
+});*/
